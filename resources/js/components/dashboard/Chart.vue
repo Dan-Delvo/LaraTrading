@@ -2,6 +2,8 @@
 import { onMounted, ref } from 'vue';
 import Card from '../ui/Card.vue';
 import CardContent from '../ui/CardContent.vue';
+import CardHeader from '../ui/CardHeader.vue';
+import CardTitle from '../ui/CardTitle.vue';
 
 const container = ref<HTMLDivElement | null>(null);
 
@@ -17,7 +19,7 @@ onMounted(() => {
     "symbol": "BINANCE:BTCUSDT",
     "interval": "D",
     "timezone": "Etc/UTC",
-    "theme": "dark", // Use "dark" for your dashboard
+    "theme": "light", 
     "style": "1",
     "locale": "en",
     "enable_publishing": false,
@@ -31,10 +33,14 @@ onMounted(() => {
 
 <template>
 
-        <Card class="h-full">
-            <CardContent class="h-full">
-                <div id="tradingview_chart" ref="container" class="h-full w-full"></div>
-            </CardContent>
-        </Card>
+  <Card class="flex h-full flex-col">
+    <CardHeader class="bg-primary">
+      <CardTitle>Live Chart</CardTitle>
+    </CardHeader>
+
+    <CardContent class="min-h-0 flex-1 p-0">
+      <div id="tradingview_chart" ref="container" class="h-full w-full"></div>
+    </CardContent>
+  </Card>
 
 </template>

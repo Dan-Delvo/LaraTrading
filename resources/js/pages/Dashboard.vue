@@ -10,6 +10,7 @@ import CardDescription from '@/components/ui/CardDescription.vue';
 import CardContent from '@/components/ui/CardContent.vue';
 import CardFooter from '@/components/ui/CardFooter.vue';
 import Chart from '@/components/dashboard/Chart.vue';
+import RecentTradesTable from '@/components/dashboard/RecentTradesTable.vue';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -25,24 +26,14 @@ const breadcrumbs: BreadcrumbItem[] = [
 
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
-            <div class="relative min-h-105 h-[55vh]">
+
+            <div class="relative min-h-[75vh] h-[55vh]">
                 <Chart />
             </div>
 
-                <div class="relative aspect-video ">
-                    <Card>
-                        <CardHeader>
-                        <CardTitle>Card Title</CardTitle>
-                        <CardDescription>Card Description</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                        <p>Card Content</p>
-                        </CardContent>
-                        <CardFooter>
-                        <p>Card Footer</p>
-                        </CardFooter>
-                    </Card>
-                </div>
+            <div class="relative min-h-[75vh] h-[55vh]">
+                <RecentTradesTable />
+            </div>
 
         </div>
     </AppLayout>
