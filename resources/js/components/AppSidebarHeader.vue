@@ -26,9 +26,9 @@ withDefaults(
 
         <div class="flex items-center gap-2">
             <Separator orientation="vertical" class="h-6 w-[3px] bg-foreground" />
-            <div class="font-bold">Binance API : <Sticker variant="destructive" rotation="none">Disconnected</Sticker></div>
+            <div class="font-bold hidden md:block">Binance API : </div> <Sticker variant="destructive" rotation="none">Disconnected</Sticker>
             <Separator orientation="vertical" class="h-6 w-[3px] bg-foreground" />
-            <div class="font-bold">Wallet Balance : <Sticker rotation="none">$0</Sticker></div>
+            <div class="font-bold hidden md:block">Wallet Balance : </div> <Sticker rotation="none">$0</Sticker>
         </div>
         </div>
     </header>
