@@ -4,7 +4,7 @@ import CardContent from '../ui/CardContent.vue';
 import CardHeader from '../ui/CardHeader.vue';
 import CardTitle from '../ui/CardTitle.vue';
 import StatCard from '../ui/StatCard.vue';
-import { Bot, DollarSign, HandCoins, Percent } from 'lucide-vue-next';
+import { Bot, HandCoins, Percent } from 'lucide-vue-next';
 
 </script>
 
