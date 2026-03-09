@@ -4,6 +4,10 @@ import Card from '../ui/Card.vue';
 import CardContent from '../ui/CardContent.vue';
 import CardHeader from '../ui/CardHeader.vue';
 import CardTitle from '../ui/CardTitle.vue';
+import { useAppearance } from '@/composables/useAppearance'
+
+const { resolvedAppearance } = useAppearance() 
+
 
 const container = ref<HTMLDivElement | null>(null);
 
@@ -19,7 +23,7 @@ onMounted(() => {
     "symbol": "BINANCE:BTCUSDT",
     "interval": "D",
     "timezone": "Etc/UTC",
-    "theme": "light", 
+    "theme": resolvedAppearance.value === 'dark' ? 'dark' : 'light', 
     "style": "1",
     "locale": "en",
     "enable_publishing": false,

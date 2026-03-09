@@ -19,13 +19,13 @@ defineProps<Props>();
 
 <template>
     <SidebarGroup
-        :class="`group-data-[collapsible=icon]:p-0 ${$props.class || ''}`"
+        :class="`px-3 pb-2 group-data-[collapsible=icon]:p-0 ${$props.class || ''}`"
     >
         <SidebarGroupContent>
             <SidebarMenu>
                 <SidebarMenuItem v-for="item in items" :key="item.title">
                     <SidebarMenuButton
-                        class="text-neutral-600 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-neutral-100"
+                        class="text-sidebar-foreground/80 hover:text-sidebar-foreground"
                         as-child
                     >
                         <a

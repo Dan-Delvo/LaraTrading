@@ -20,13 +20,14 @@ const breadcrumbs: BreadcrumbItem[] = [
     <Head title="Dashboard" />
 
     <AppLayout :breadcrumbs="breadcrumbs">
-        <div class="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-6 gap-y-6">
-
-            <div class="relative">
+        <div class="flex h-full flex-1 flex-col overflow-x-auto rounded-xl p-6 ">
+            <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
+            <p class="text-muted-foreground mb-6">Get an overview of your trading performance, recent activity, and insights powered by A.I.</p>
+            <div class="relative mb-6">
                 <AiControlPanel />
             </div>
 
-            <div class="relative min-h-[75vh] h-[55vh]">
+            <div class="relative min-h-[75vh] h-[55vh] mb-6">
                 <Chart />
             </div>
 

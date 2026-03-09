@@ -9,6 +9,7 @@ Route::inertia('/', 'Welcome', [
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::inertia('dashboard', 'Dashboard')->name('dashboard');
+    Route::inertia('tradelog', 'TradeLog')->name('tradelogs');
 });
 
 require __DIR__.'/settings.php';

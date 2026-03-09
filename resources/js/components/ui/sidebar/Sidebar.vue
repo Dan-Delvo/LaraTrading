@@ -24,7 +24,7 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
   <div
     v-if="collapsible === 'none'"
     data-slot="sidebar"
-    :class="cn('bg-sidebar text-sidebar-foreground flex h-full w-(--sidebar-width) flex-col border-r-3 border-foreground shadow-[6px_0_0px_hsl(var(--shadow-color))]', props.class)"
+    :class="cn('bg-sidebar text-sidebar-foreground flex h-full w-(--sidebar-width) flex-col border-r-2 border-sidebar-border', props.class)"
     v-bind="$attrs"
   >
     <slot />
@@ -36,7 +36,7 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
       data-slot="sidebar"
       data-mobile="true"
       :side="side"
-      class="bg-sidebar text-sidebar-foreground w-(--sidebar-width) border-3 border-foreground p-0 shadow-[6px_6px_0px_hsl(var(--shadow-color))] [&>button]:hidden"
+      class="bg-sidebar text-sidebar-foreground w-(--sidebar-width) border-r-2 border-sidebar-border p-0 [&>button]:hidden"
       :style="{
         '--sidebar-width': SIDEBAR_WIDTH_MOBILE,
       }"
@@ -87,7 +87,7 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
     >
       <div
         data-sidebar="sidebar"
-        class="bg-sidebar flex h-full w-full flex-col rounded-xl border-3 border-foreground shadow-[6px_6px_0px_hsl(var(--shadow-color))]"
+        class="bg-sidebar flex h-full w-full flex-col border-r-2 border-sidebar-border"
       >
         <slot />
       </div>
