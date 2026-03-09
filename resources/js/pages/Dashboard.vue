@@ -32,7 +32,7 @@ const breadcrumbs: BreadcrumbItem[] = [
             </div>
 
             <div class="relative">
-                <RecentTradesTable />
+                <RecentTradesTable title="Recent Trades" />
             </div>
 
         </div>

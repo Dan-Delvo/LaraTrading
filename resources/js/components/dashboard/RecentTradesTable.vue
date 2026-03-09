@@ -12,14 +12,17 @@ import TableHead from '../ui/TableHead.vue';
 import TableHeader from '../ui/TableHeader.vue';
 import TableRow from '../ui/TableRow.vue';
 
+const props = defineProps<{
+    title: string;
+}>();
 
 </script>
 
 <template>
-    
+
     <Card>
         <CardHeader class="bg-secondary">
-        <CardTitle>Recent Trades</CardTitle>
+        <CardTitle>{{ props.title }}</CardTitle>
         </CardHeader>
         <CardContent>
         <Table>
@@ -45,7 +48,7 @@ import TableRow from '../ui/TableRow.vue';
                 <TableCell>$150</TableCell>
                 <TableCell>$138</TableCell>
                 <TableCell>Strong RSI..</TableCell>
-                <TableCell>                
+                <TableCell>
                     <Button animation="wiggle" size="sm" variant="destructive">Close Trade</Button>
                 </TableCell>
             </TableRow>
@@ -62,7 +65,7 @@ import TableRow from '../ui/TableRow.vue';
                     <Button animation="wiggle" size="sm" variant="destructive">Close Trade</Button>
                 </TableCell>
             </TableRow>
-            
+
             <TableRow>
                 <TableCell>8 PM</TableCell>
                 <TableCell>ETH-USDT</TableCell>

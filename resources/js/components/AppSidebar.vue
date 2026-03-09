@@ -14,7 +14,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { dashboard, tradelogs } from '@/routes';
+import { dashboard, tradelogs, tradesettings } from '@/routes';
 import type { NavItem } from '@/types';
 
 
@@ -31,7 +31,7 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'Settings',
-        href: '#',
+        href: tradesettings(),
         icon: Settings,
     },
 ];
@@ -69,7 +69,6 @@ const footerNavItems: NavItem[] = [
         </SidebarContent>
 
         <SidebarFooter>
-            <NavFooter :items="footerNavItems" />
             <NavUser />
         </SidebarFooter>
     </Sidebar>

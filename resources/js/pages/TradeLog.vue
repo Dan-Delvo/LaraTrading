@@ -4,6 +4,7 @@ import { Head } from '@inertiajs/vue3';
 import { BreadcrumbItem } from '@/types';
 import { tradelogs } from '@/routes';
 import PerformanceMetrics from '@/components/tradelogs/PerformanceMetrics.vue';
+import RecentTradesTable from '@/components/dashboard/RecentTradesTable.vue';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -24,6 +25,10 @@ const breadcrumbs: BreadcrumbItem[] = [
 
             <div class="relative mb-6">
                 <PerformanceMetrics />
+            </div>
+
+            <div class="relative mb-6">
+                <RecentTradesTable title="Historical and Active Trades" />
             </div>
 
         </div>
