@@ -97,7 +97,7 @@ const breadcrumbs: BreadcrumbItem[] =[
 
                         <CardTitle class="whitespace-nowrap font-mono">automation Mode:</CardTitle>
 
-                        <RadioGroup defaultValue="manual">
+                        <RadioGroup defaultValue="manual" className="flex gap-4">
                             <div class="flex items-start space-x-2 mb-2">
                                 <RadioGroupItem value="manual" id="manual" class="mt-1" />
                                 <div class="grid gap-1.5 leading-none">
