@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Actions\UpdateTradeSettings;
 use App\Http\Requests\TradeSettings;
+use App\Http\Resources\PagesResource\TradeSettingsResource;
+use App\Models\TradingConfiguration;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -16,8 +18,9 @@ class TradeSettingsController extends Controller
      */
     public function index()
     {
+        $settings = TradingConfiguration::tradingSettingsDefault();
         return Inertia::render('TradeSettings', [
-            
+            'settings' => $settings ? TradeSettingsResource::make($settings) : null
         ]);
     }
 

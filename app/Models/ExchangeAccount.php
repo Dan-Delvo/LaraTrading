@@ -63,12 +63,16 @@ class ExchangeAccount extends Model
 
     public static function storeTradeSettingsExchange(string $key, string $secret)
     {
-        return self::createOrUpdate([
-            'user_id'       => Auth::id(),
-            'name'          => 'Lobot',
-            'exchange'      => 'Binance',
-            'api_key'       => $key,
-            'api_secret'    => $secret,
-        ]);
+        return self::updateOrCreate(
+            [
+                'user_id'       => Auth::id(),
+                'exchange'      => 'Binance',
+            ],
+            [
+                'name'          => 'Lobot',
+                'api_key'       => $key,
+                'api_secret'    => $secret,
+            ]
+        );
     }
 }

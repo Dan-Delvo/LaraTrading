@@ -70,14 +70,8 @@ class TradingConfiguration extends Model
         return $this->hasMany(TradeSignal::class);
     }
 
-    public static function storeTradeSettingsConf(
-        ?int $exchangeId,
-        ?int $aiId,
-        ?string $rr,
-        ?int $maxSize,
-        ?int $dailySl,
-        string $mode
-    ): self {
+    public static function storeTradeSettingsConf(?int $exchangeId, ?int $aiId, ?string $rr, ?int $maxSize, ?int $dailySl, string $mode): self 
+    {
         return self::updateOrCreate(
             [
                 'user_id' => Auth::id(),
@@ -103,5 +97,26 @@ class TradingConfiguration extends Model
                 'rules' => null,
             ]
         );
+    }
+
+    public static function tradingSettingsDefault(): ?self
+    {
+        return self::query()
+            ->select([
+                'id',
+                'exchange_account_id',
+                'ai_provider_account_id',
+                'default_risk_reward_ratio',
+                'max_position_size_usdt',
+                'daily_stop_loss_limit_percent',
+                'automation_mode',
+            ])
+            ->where('user_id', Auth::id())
+            ->with([
+                'exchangeAccount:id,api_key,api_secret',
+                'aiProviderAccount:id,api_key,model'
+            ])
+            ->latest('id')
+            ->first();
     }
 }

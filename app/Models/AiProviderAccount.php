@@ -53,13 +53,17 @@ class AiProviderAccount extends Model
 
     public static function storeTradeSettingsAi(string $key, string $model)
     {
-        return self::createOrUpdate([
-            'user_id'   => Auth::id(),
-            'name'      => 'ollama',
-            'provider'  => 'ollama',
-            'model'     => $model,
-            'api_key'   => $key,
-            'is_active' => true,
-        ]);
+        return self::updateOrCreate(
+            [
+                'user_id'   => Auth::id(),
+                'provider'  => 'ollama',
+            ],
+            [
+                'name'      => 'ollama',
+                'model'     => $model,
+                'api_key'   => $key,
+                'is_active' => true,
+            ]
+        );
     }
 }
