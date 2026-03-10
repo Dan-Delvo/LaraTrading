@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Auth;
 
 class Trade extends Model
 {
@@ -66,5 +68,26 @@ class Trade extends Model
     public function exchangeAccount(): BelongsTo
     {
         return $this->belongsTo(ExchangeAccount::class);
+    }
+
+    public static function getTradesForTable(): ?LengthAwarePaginator
+    {
+        return self::query()
+            ->select([
+                'id',
+                'trade_signal_id',
+                'exchange_account_id',
+                'opened_at',
+                'symbol',
+                'entry_price',
+                'take_profit',
+                'stop_loss',
+                'status'
+            ])
+            ->where('user_id', Auth::id())
+            ->with([
+                'tradeSignal:id,action,rationale'
+            ])
+            ->paginate(5);
     }
 }

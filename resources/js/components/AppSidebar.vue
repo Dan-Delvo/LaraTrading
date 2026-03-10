@@ -13,9 +13,10 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { dashboard, tradelogs } from '@/routes';
+import { dashboard } from '@/routes';
 import type { NavItem } from '@/types';
 import tradesettings from '@/routes/tradesettings';
+import tradelogs from '@/routes/tradelogs';
 
 
 const mainNavItems: NavItem[] = [
@@ -26,7 +27,7 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'Trades',
-        href: tradelogs(),
+        href: tradelogs.index(),
         icon: ChartCandlestick,
     },
     {
