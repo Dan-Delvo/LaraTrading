@@ -7,7 +7,6 @@ import CardTitle from '@/components/ui/CardTitle.vue';
 import Input from '@/components/ui/Input.vue';
 import Sticker from '@/components/ui/Sticker.vue';
 import AppLayout from '@/layouts/AppLayout.vue';
-import { tradesettings } from '@/routes';
 import { BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/vue3';
 import {
@@ -19,11 +18,12 @@ import {
 } from '@/components/ui/select';
 import RadioGroup from '@/components/ui/RadioGroup.vue';
 import RadioGroupItem from '@/components/ui/RadioGroupItem.vue';
+import tradesettings from '@/routes/tradesettings';
 
 const breadcrumbs: BreadcrumbItem[] =[
     {
         title: 'Settings',
-        href: tradesettings()
+        href: tradesettings.index()
     },
 ];
 </script>
@@ -62,6 +62,7 @@ const breadcrumbs: BreadcrumbItem[] =[
                     </CardContent>
                 </Card>
             </div>
+
             <div class="relative mb-6">
                 <Card>
                     <CardHeader class="bg-info">
@@ -149,6 +150,11 @@ const breadcrumbs: BreadcrumbItem[] =[
                     </CardContent>
                 </Card>
             </div>
+
+            <div class="flex flex-row justify-end mt-6">
+                <Button variant="default" >Save Settings</Button>
+            </div>
+            
         </div>
     </AppLayout>
 

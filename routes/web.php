@@ -1,16 +1,22 @@
 <?php
 
+use App\Http\Controllers\TradeSettingsController;
 use Illuminate\Support\Facades\Route;
-use Laravel\Fortify\Features;
 
-Route::inertia('/', 'Welcome', [
-    'canRegister' => Features::enabled(Features::registration()),
-])->name('home');
+
+Route::inertia('/', 'auth/Login')->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
+
     Route::inertia('dashboard', 'Dashboard')->name('dashboard');
     Route::inertia('tradelog', 'TradeLog')->name('tradelogs');
-    Route::inertia('tradesettings', 'TradeSettings')->name('tradesettings');
+
+    Route::prefix('tradesettings')->group(function () {
+        Route::get('/', [TradeSettingsController::class, 'index'])->name('tradesettings.index');
+        Route::post('/', [TradeSettingsController::class, 'store'])->name('tradesettings.store');
+    });
+    
 });
+
 
 require __DIR__.'/settings.php';

@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -48,5 +49,30 @@ class User extends Authenticatable
             'password' => 'hashed',
             'two_factor_confirmed_at' => 'datetime',
         ];
+    }
+
+    public function exchangeAccounts(): HasMany
+    {
+        return $this->hasMany(ExchangeAccount::class);
+    }
+
+    public function aiProviderAccounts(): HasMany
+    {
+        return $this->hasMany(AiProviderAccount::class);
+    }
+
+    public function tradingConfigurations(): HasMany
+    {
+        return $this->hasMany(TradingConfiguration::class);
+    }
+
+    public function tradeSignals(): HasMany
+    {
+        return $this->hasMany(TradeSignal::class);
+    }
+
+    public function trades(): HasMany
+    {
+        return $this->hasMany(Trade::class);
     }
 }

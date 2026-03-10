@@ -70,12 +70,14 @@ import { DollarSign } from 'lucide-vue-next';
                                 <SelectTrigger
                                     class="h-11 w-full border-3 border-foreground bg-background font-bold shadow-[4px_4px_0px_hsl(var(--shadow-color))] focus:translate-x-[4px] focus:translate-y-[4px] focus:shadow-none"
                                 >
-                                <SelectValue placeholder="Select a ticker" />
+                                <SelectValue placeholder="Select a strategy" />
                                 </SelectTrigger>
                                 <SelectContent class="z-[9999] border-3 border-foreground bg-card shadow-[4px_4px_0px_hsl(var(--shadow-color))]">
-                                <SelectItem value="apple" class="font-semibold">Apple</SelectItem>
-                                <SelectItem value="banana" class="font-semibold">Banana</SelectItem>
-                                <SelectItem value="orange" class="font-semibold">Orange</SelectItem>
+                                <SelectItem value="calm" class="font-semibold">Calm</SelectItem>
+                                <SelectItem value="balanced" class="font-semibold">Balanced</SelectItem>
+                                <SelectItem value="aggressive" class="font-semibold">Aggresive</SelectItem>
+                                <SelectItem value="scalping" class="font-semibold">Scalping</SelectItem>
+                                <SelectItem value="trend_following" class="font-semibold">Aggresive</SelectItem>
                                 </SelectContent>
                             </Select>                        
                         </div>
